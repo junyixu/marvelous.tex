@@ -21,5 +21,25 @@
 \end{theorem}
 根据定理\ref{th:马休定理}和Eq.~\eqref{eq:FreeEnergy}和Eq.~\eqref{eq:partion_function}得出：给出\(Z(T,V)\)就能求出一切热力学量
 
+\begin{definition}[广义力]
+  \begin{equation}
+  p = - \sum_l a_l \pdv{\varepsilon_l}{V}
+  \end{equation}
+  \label{def:广义力}
+\end{definition}
+对于光子气体，处于第\(l\)个相格的光子的能量为
+\begin{equation}
+  \varepsilon_l  = c p_l = c \frac{2\pi \hbar}{L} \sqrt{n_x^2 + n_y^2 + n_z^2}
+  \label{eq:光子气体能量}
+\end{equation}
+其中处于第\(l\)个相格的光子的动量大小为\sn{由箱归一化周期性边界条件得到}
+\begin{equation*}
+p_l = \frac{2\pi \hbar}{L} \sqrt{n_x^2 + n_y^2 + n_z^2}
+\end{equation*}
+把\cref{eq:光子气体能量}代入\cref{def:广义力}得
+\begin{equation}
+  p = \frac{1}{3} \sum_l a_l \varepsilon_l / V = \frac{u}{3}
+\end{equation}
+其中\(u\)为能量密度
 
 %%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:
