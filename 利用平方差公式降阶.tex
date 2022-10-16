@@ -1,0 +1,61 @@
+% !TEX root = main.tex
+% 利用平方差公式降阶
+
+\section{利用平方差公式降阶}%
+
+\subsection{波动方程，达朗贝尔行波法}%
+
+\begin{equation*}
+	\da \psi = 0
+\end{equation*}
+\begin{equation*}
+	\left(	\pdv[2]{x} + \pdv[2]{ict} \right)
+	\psi = 0
+\end{equation*}
+\begin{equation*}
+	\left(	\pdv[2]{x} - \pdv[2]{ct} \right)
+	\psi = 0
+\end{equation*}
+\begin{equation*}
+\pdv{x} \to \hat{x}
+\qquad
+\pdv{t} \to \hat{t}
+\end{equation*}
+
+\begin{equation*}
+	\left(\hat{x}+\hat{t}\right) 
+	\left(\hat{x}-\hat{t}\right) 
+	\psi = 0
+\end{equation*}
+\begin{equation*}
+	\pdv{\xi} \pdv{\eta} \psi = 0
+\end{equation*}
+
+
+\begin{equation*}
+	\vb{v} = \matr{A} \vb{u}
+\end{equation*}
+\(\matr{A}\) 是常矩阵
+\begin{equation*}
+	\pdv{\vb{v}} = (\matr{A}^{-1})\tp \pdv{\vb{u}}
+\end{equation*}
+\sn{自己证}
+
+\subsection{一维谐振子}%
+\begin{equation*}
+	\begin{aligned}
+		\Ham &=  \hat{U} + \hat{T} \\
+				 &= \frac{1}{2} m \omega^2 x^2 - \frac{\hbar^2}{2m} \pdv[2]{x} \\
+				 &= \frac{1}{2m} ( m^2 \omega^2 x^2  - \hbar^2\pdv[2]{x}) \\
+				 &= \frac{1}{2m} 
+				 ( m \omega x  - \hbar\pdv{x})
+				 ( m \omega x  + \hbar\pdv{x}) \\
+				 &= \frac{1}{2m} 
+				 a_+ \vdot a_-
+	\end{aligned}
+\end{equation*}
+\subsection{克莱因高登方程和狄拉克方程}%
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

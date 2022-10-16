@@ -1,0 +1,69 @@
+% !TEX root = main.tex
+% 电势和电场
+
+\section{ \( \vb{E} = - \grad \varphi \) }%
+
+在标量场\( \varphi \)中(\( \varphi \)是电势)，将一单位电荷从 1 移到 2，整个过程是准静态的。假设从1到2的电势升高 \( \Delta \varphi \)。\sn{就算是降低也没有关系，那么 \( \Delta \varphi \)是负的就行了}
+\begin{equation*}
+	\Delta \varphi = \varphi(x_2) - \varphi(x_1) 
+	= 
+	\pdv{\varphi}{x} \Delta x
+\end{equation*}
+那么外力(非静电力)需要对此单位电荷做功\( \Delta W \) 使之电势升高
+\begin{equation*}
+	\Delta W = \Delta \varphi
+\end{equation*}
+
+在矢量场\( \vb{E} \)中(\( \vb{E} \)是电场强度)，由于准静态过程，外力\( \vb{F} \)和静电力\( \vb{E} \)受力平衡：
+\begin{equation*}
+	\vb{F} + \vb{E}q = 0
+\end{equation*}
+在数值上
+\begin{equation*}
+	\vb{F} + \vb{E} = 0
+\end{equation*}
+由功的定义：
+\begin{equation*}
+	\Delta W = F \Delta x = -E_x \Delta x
+\end{equation*}
+可得
+\begin{equation*}
+	\pdv{\varphi}{x} = - E_x
+\end{equation*}
+三维情况
+\begin{align*}
+	\pdv{\varphi}{x} = - E_x \\
+	\pdv{\varphi}{y} = - E_y \\
+	\pdv{\varphi}{z} = - E_z
+\end{align*}
+\begin{equation}
+	\grad \varphi = -\vb{E}
+\end{equation}
+综上，从点1到点2，外力做功，在标量场中只要计算一个减法
+\begin{equation*}
+ \frac{\Delta W}{q}	 = \varphi(\vb{r}_2) - \varphi(\vb{r}_1)
+\end{equation*}
+而在矢量场中需要计算三个积分
+\begin{equation*}
+	\frac{\Delta W}{q}	 =\int_{\vb{r}_1}^{\vb{r}_2} - \vb{E} \dd \vb{r}
+\end{equation*}
+
+\begin{proof}
+	\begin{equation}
+		\curl [ f(r) \vu{r} ]
+		\label{eq:球对称的力}
+	\end{equation}
+\end{proof}
+\begin{enumerate}
+	\item 由库伦定律，点电荷\( q_i \)的电场\( \vb{E}_i \)满足式~\eqref{eq:球对称的力} 
+	\item \( \curl \vb{E}_i = 0 \)
+	\item 叠加\sn{叠加与坐标轴的选取无关}原理 
+		\( \curl \left(\sum_i \vb{E}_i\right) = 0 \)
+	\item \( \forall \vb{E}, \curl \vb{E} = 0 \). 
+	\item 由\( \curl \grad \varphi \equiv 0 \)知，\( \varphi \)必然存在。
+\end{enumerate}
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

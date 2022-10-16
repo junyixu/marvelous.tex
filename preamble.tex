@@ -1,0 +1,46 @@
+% preamble
+
+\documentclass[fontset=windows]{ctexart}
+% \usepackage{ulem}
+\usepackage{NotesCTeX,lipsum}
+\usepackage{svg}
+\usepackage{outlines}
+\usepackage{siunitx}
+\usepackage{wrapfig}
+% \usepackage{tabular}
+\newcommand{\im}{\mathrm{i}}%
+\newcommand{\XX}{\hat{X}}%
+\newcommand{\JJ}{\hat{J}}%
+\newcommand{\RR}{\hat{R}}%
+\newcommand{\tp}{^{\textup{T}}} %矩阵转置 % 覆盖 physics 宏包的 Trace
+
+% \usepackage[english]{babel}
+% https://github.com/gpoore/minted/issues/159
+\usepackage[outputdir=latex.out]{minted}
+\usemintedstyle{mathematica}
+\definecolor{LightGray}{gray}{0.95}
+
+% \code{language}{filename}
+% eg: \code{wolfram}{./a.mma}
+% eg: \code{python}{./a.py}
+\newcommand{\code}[2]{%
+\inputminted[%
+linenos,
+baselinestretch=1.2,
+bgcolor=LightGray]{#1}{#2}}
+\usepackage[capitalise]{cleveref}
+
+\DeclareMathOperator{\rref}{rref}
+% \renewcommand{\bigO}[1]{$\mathcal{O}(#1)$}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+% highlight
+\newcommand{\hl}[1]{\colorbox{BurntOrange}{#1}}
+\newcommand{\matr}[1]{\mathbf{#1}} % undergraduate algebra version
+% \newcommand{\matr}[1]{\bm{#1}}     % ISO complying version
+
+\input{../preamble}
+\input{choice_question_env}
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

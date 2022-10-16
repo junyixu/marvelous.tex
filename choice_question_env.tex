@@ -1,0 +1,51 @@
+% choice_question_env
+\newlength{\xxla}
+\newlength{\xxlb}
+\newlength{\xxlc}
+\newlength{\xxld}
+\newlength{\lhalf}
+\newlength{\lquarter}
+\newlength{\lmax}
+\newcommand{\options}[4]{
+	\par
+	\settowidth{\xxla}{(A)~#1~~~}
+	\settowidth{\xxlb}{(B)~#2~~~}
+	\settowidth{\xxlc}{(C)~#3~~~}
+	\settowidth{\xxld}{(D)~#4~~~}
+
+	\ifthenelse{\lengthtest{\xxla>\xxlb}}{\setlength{\lmax}{\xxla}}{\setlength{\lmax}{\xxlb}}
+	\ifthenelse{\lengthtest{\xxlc>\lmax}}{\setlength{\lmax}{\xxlc}}{}
+	\ifthenelse{\lengthtest{\xxld>\lmax}}{\setlength{\lmax}{\xxld}}{}
+	\setlength{\lhalf}{0.5\linewidth}
+	\setlength{\lquarter}{0.25\linewidth}
+	\ifthenelse{\lengthtest{\lmax>\lhalf}}
+	{
+		\begin{enumerate}[label=(\Alph*),parsep=0ex,itemsep=0ex,leftmargin=2em, topsep=0ex]
+			\item #1
+			\item #2
+			\item #3
+			\item #4
+		\end{enumerate}
+	}
+	{
+		\ifthenelse{\lengthtest{\lmax>\lquarter}}
+		{
+			\makebox[\lhalf][l]{(A)~#1~~~}%
+			\makebox[\lhalf][l]{(B)~#2~~~}%
+
+			\makebox[\lhalf][l]{(C)~#3~~~}%
+			\makebox[\lhalf][l]{(D)~#4~~~}%
+		}
+		{
+			\makebox[\lquarter][l]{(A)~#1~~~}%
+			\makebox[\lquarter][l]{(B)~#2~~~}%
+			\makebox[\lquarter][l]{(C)~#3~~~}%
+			\makebox[\lquarter][l]{(D)~#4~~~}%
+		}
+	}
+}
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

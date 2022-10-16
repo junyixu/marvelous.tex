@@ -1,0 +1,33 @@
+% !TEX root = main.tex
+% 勒让德多项式
+
+\section{勒让德多项式}%
+\begin{equation*}
+	\begin{aligned}
+		P_l(x) &= \frac{1}{2^l} \sum_{m=0}^{[\frac{l}{2}]}
+	(-1)^m C_l^m C_{2l - 2m}^{l} x^{l - 2m}\\
+&= \frac{1}{2^l} \sum_{m=0}^{[\frac{l}{2}]}
+	(-1)^m \frac{(2l - 2m)!}{m! (l-m)! (l-2m)!} x^{l-2m}
+	\end{aligned}
+\end{equation*}
+其中\([\ ]\)代表向下取整
+\begin{equation*}
+	\left[\frac{l}{2}\right] = 
+	\begin{cases}
+		\frac{l}{2} & \qq{\(l\) is even } \\
+		\frac{l-1}{2} & \qq{\(l\) is odd }
+	\end{cases}
+\end{equation*}
+
+\begin{align*}
+	P_0 = 1 \\
+	P_1 = x \\
+	P_2 = \frac{1}{2}(3x^2 - 1) \\
+	P_3 = \frac{1}{2}(5x^3 - 3x)
+\end{align*}
+
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

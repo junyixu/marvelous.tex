@@ -1,0 +1,103 @@
+% MeanValueTheorem
+
+
+\section{Mean Value Theorem}%
+% 中值定理
+Fermat Lemma
+\( \implies \)
+Rolle Theorem
+\( \implies \)
+Lagrange's Mean Value Theorem
+\( \implies \)
+Cauchy Mean Value Theorem
+
+\subsection{Fermat Lemma}%
+\label{sub:Fermat_Lemma}
+
+\begin{equation*}
+\frac{f(x + \Delta x) - f(x)}{\Delta x}
+\end{equation*}
+
+\begin{enumerate}
+	\item Minimum: 
+	\begin{enumerate}
+		\item If \( \Delta x > 0 \), \( f(x + \Delta x) - f(x) > 0\) , 
+\( \frac{f(x + \Delta x) - f(x)}{\Delta x} >0 \)
+		\item If \( \Delta x < 0 \), \( f(x + \Delta x) - f(x) < 0\) 
+\( \frac{f(x + \Delta x) - f(x)}{\Delta x} <0 \)
+	\end{enumerate}
+	\item Maximum 
+\begin{enumerate}
+		\item If \( \Delta x > 0 \), \( f(x + \Delta x) - f(x) < 0\) , 
+\( \frac{f(x + \Delta x) - f(x)}{\Delta x} <0 \)
+		\item If \( \Delta x < 0 \), \( f(x + \Delta x) - f(x) > 0\) 
+\( \frac{f(x + \Delta x) - f(x)}{\Delta x} >0 \)
+	\end{enumerate}
+\end{enumerate}
+\begin{equation*}
+	h(\xi) = \frac{f(x + \xi) - f(x)}{\xi}
+\end{equation*}
+Zero point theorem:
+\begin{enumerate}
+	\item If \( h(\xi^-) < 0 \) and \( h(\xi^+) > 0 \), then \( h(\xi) = 0 \)
+	\item If \( h(\xi^-) > 0 \) and \( h(\xi^+) < 0 \), then \( h(\xi) = 0 \)
+\end{enumerate}
+
+\subsection{Rolle Theorem}%
+\label{sub:Rolle_Theorem}
+
+Give an arbitrary curve. Two possibilities:
+\begin{enumerate}
+	\item Extremum is one of the endpoints of the curve. The curve is a straight line. \( \forall \xi \in (x_1, x_2), f'(\xi) = 0 \).
+	\item Extremum in the middle of the curve. There must be a point, say \( \xi \), \( \st f'(\xi) = 0 \), according to \cref{sub:Fermat_Lemma}.
+\end{enumerate}
+
+So if 
+\begin{enumerate}
+	\item continuous in \( [x_1, x_2] \) 
+	\item differentiable in \( (x_1, x_2) \) 
+	\item \( f(x_1) = 0, f(x_2) = 0 \),
+\end{enumerate}
+\( \exists \xi \in (x_1, x_2) \st f'(\xi) = 0 \).
+\subsection{Lagrange's Mean Value Theorem}%
+\sidenote{
+\begin{equation*}
+	\Delta y = y'(\xi) \Delta x \qc \xi \in (x, x + \Delta x)
+\end{equation*}
+If \( \Delta x \to 0 \), then \( \xi \to x \)
+\begin{align*}
+	\Delta y &= y'(\xi) \\ 
+					 &\approx  y'(x) \Delta x \qc \xi \in (x, x + \Delta x)
+\end{align*}
+\( \dd x = \Delta x, \Delta x \to 0 \)
+\begin{equation*}
+	\dd y = y'(x) \dd x 
+\end{equation*}
+% which is fundamental theorem of Calculus.
+}
+Rotate the x y coordinate system according to Section~\ref{sub:Rolle_Theorem}.
+\begin{equation}
+	\frac{y_2 - y_1}{x_2 - x_1} = y'(\xi) \qc \xi \in (x_1, x_2) %TODO []  or ()
+	\label{eq:LagrangeTheorem}
+\end{equation}
+
+
+\subsection{Cauchy Mean Value Theorem}%
+	According to Eq.~\eqref{eq:LagrangeTheorem} 
+\begin{equation*}
+\begin{aligned}
+	\frac{f_2 - f_1}{g_2 - g_1} = f'(\xi) &= \eval{\dv{f}{g}}_{t = \xi} \\ %TODO []  or () 
+	&= \eval{\left(\dv{f}{t} \vdot
+	\dv{t}{g}\right)}_{t = \xi} 
+	= \frac{f'(\xi)}{g'(\xi)}
+	\qc \xi \in (t_1,t_2)
+\end{aligned}
+\end{equation*}
+i.e.
+\begin{equation}
+	\frac{f(t_2) - f(t_1)}{g(t_2) - g(t_1)} = 
+	= \frac{f'(\xi)}{g'(\xi)}
+	\qc \xi \in (t_1,t_2)
+\end{equation}
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

@@ -1,0 +1,169 @@
+% !TEX root = main.tex
+% 静电场唯一性定理
+
+\section{静电场唯一性定理}%
+\subsection{第一唯一性定理}%
+边界条件给定，假设
+\begin{equation*}
+	\laplacian \phi = - \frac{\rho}{\epsilon_0}
+\end{equation*}
+有两个解\(\phi_1, \phi_2\)，现证明\(\phi_1 = \phi_2\)，设\(\phi_3 = \phi_2 - \phi_1\)。
+
+内部：
+\begin{equation*}
+	\laplacian \phi_1 = - \frac{\rho}{\epsilon_0}
+\end{equation*}
+\begin{equation*}
+	\laplacian \phi_2 = - \frac{\rho}{\epsilon_0}
+\end{equation*}
+\begin{equation*}
+	\laplacian \phi_3 = 0
+\end{equation*}
+边界上：
+\begin{equation}
+\phi_3 = \phi_2 - \phi_1 = 0
+\end{equation}
+\begin{equation*}
+	\pdv{\phi_3}{r}
+	=
+	\pdv{\phi_2}{r}
+	-
+	\pdv{\phi_1}{r}
+	=0
+\end{equation*}
+
+利用矢量恒等式：
+\begin{equation*}
+	\div(\phi \grad \phi) 
+	= 
+	(\grad \phi) \vdot (\grad \phi) 
+	+
+	\phi \laplacian \phi
+	= 
+	(\grad \phi)^2
+	+
+	\phi \laplacian \phi
+\end{equation*}
+
+再利用散度定理：
+\begin{equation*}
+	\oint \phi_3 \grad \phi_3 \vdot \dd \vb{S} 
+	= 
+	\int
+	\left( 
+	(\grad \phi_3)^2
+	+
+	\phi_3 \laplacian \phi_3\right)
+	\dd V
+\end{equation*}
+
+由于\(\laplacian \phi_3=0\)，所以
+\begin{equation*}
+	\oint \phi_3 \grad \phi_3 \vdot \dd \vb{S} 
+	= 
+	\int
+	\left(\grad \phi_3\right)^2
+	\dd V
+\end{equation*}
+由于边界处\(\phi_3 = 0\)且\(\grad \phi_3 = 0\)
+\begin{equation*}
+0 =
+	\int
+	\left(\grad \phi_3\right)^2
+	\dd V
+\end{equation*}
+由于\(	\left(\grad \phi_3\right)^2 \geq 0\)，所以
+\begin{equation*}
+	\grad \phi_3 = 0
+\end{equation*}
+所以\(\phi_3\)为常数，又由于\(\phi_3\)在边界处为零，若\(\phi_3\)连续
+\begin{equation*}
+	\phi_3 = 0
+\end{equation*}
+即
+\begin{equation*}
+ \phi_2 = \phi_1
+\end{equation*}
+
+\subsection{第二唯一性定理}%
+
+\begin{equation*}
+	\div(\grad \phi_1 )= \frac{\rho}{\epsilon}
+\end{equation*}
+\begin{equation*}
+	\div(\grad \phi_2 )= \frac{\rho}{\epsilon}
+\end{equation*}
+\begin{equation*}
+	\div\left(\grad (\phi_2 - \phi_1) \right)=0
+\end{equation*}
+
+导体的边界上：
+\begin{equation*}
+	\oint (\grad \phi_1 ) \vdot \dd \vb{S}= \frac{Q}{\epsilon}
+\end{equation*}
+\begin{equation*}
+	\oint (\grad \phi_2 ) \vdot \dd \vb{S}= \frac{Q}{\epsilon}
+\end{equation*}
+\begin{equation}
+	\oint (\grad \phi_3 ) \vdot \dd \vb{S}=0
+	\label{eq:ophi3}
+\end{equation}
+
+矢量恒等式：
+\begin{equation*}
+	\div(\phi \grad \phi) 
+	= 
+	(\grad \phi) \vdot (\grad \phi) 
+	+
+	\phi \laplacian \phi
+	= 
+	(\grad \phi)^2
+	+
+	\phi \laplacian \phi
+\end{equation*}
+
+再利用散度定理：
+\begin{equation*}
+	\oint \phi_3 \grad \phi_3 \vdot \dd \vb{S} 
+	= 
+	\int
+	\left( 
+	(\grad \phi_3)^2
+	+
+	\phi_3 \laplacian \phi_3\right)
+	\dd V
+\end{equation*}
+
+由于\(\laplacian \phi_3=0\)，所以
+\begin{equation*}
+	\oint \phi_3 \grad \phi_3 \vdot \dd \vb{S} 
+	= 
+	\int
+	\left(\grad \phi_3\right)^2
+	\dd V
+\end{equation*}
+由于导体是等势体，\(\phi_3\)在边界处是个常数
+\begin{equation*}
+\phi_3 	\oint \grad \phi_3 \vdot \dd \vb{S} 
+	= 
+	\int
+	\left(\grad \phi_3\right)^2
+	\dd V
+\end{equation*}
+Eq.~\eqref{eq:ophi3} 
+\begin{equation*}
+	0
+	= 
+	\int
+	\left(\grad \phi_3\right)^2
+	\dd V
+\end{equation*}
+由于\(	\left(\grad \phi_3\right)^2 \geq 0\)，所以
+\begin{equation*}
+	\grad \phi_3 = 0
+\end{equation*}
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

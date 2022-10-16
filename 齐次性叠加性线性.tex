@@ -1,0 +1,49 @@
+%! TEX root = ./main.tex
+% 齐次性叠加性线性
+
+\begin{definition}[齐次性]
+等价于算符和纯数的交换律
+\begin{equation}
+	\Ham[kf] = k \Ham[f]
+\end{equation}
+\begin{equation}
+	\Ham k f = k \Ham f
+\end{equation}
+\end{definition}
+
+\begin{definition}[叠加性]
+等价于算符的结合律
+\begin{equation}
+	\Ham[f_1+f_2] = \Ham[f_1] + \Ham[f_2]
+\end{equation}
+\begin{equation}
+	\Ham(f_1+f_2) = \Ham f_1 + \Ham f_2
+\end{equation}
+\end{definition}
+
+
+\begin{definition}[线性]
+同时满足齐次性和叠加性，即类比线性空间的向量，矩阵作用于向量上，向量数乘和向量加法
+\begin{equation}
+	\Ham( k_1 f_1 + k_2 f_2 )
+	=
+	\Ham k_1 f_1 
+	+
+	\Ham k_2 f_2 
+	=
+	 k_1\Ham f_1 
+	+
+	 k_2\Ham f_2 
+\end{equation}
+\end{definition}
+
+
+位置(空间)不变性，即退化算符$\Ham$和平移算符$\hat{T}$对易
+\begin{definition}[平移算符]
+	\begin{equation}
+		\T f(x) =  f(x-a)
+	\end{equation}
+\end{definition}
+\begin{equation}
+	\Ham \T f(x) = \T \Ham f(x) 
+\end{equation}

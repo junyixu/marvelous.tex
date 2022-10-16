@@ -1,0 +1,68 @@
+% !TEX root = main.tex
+% LaplaceTransform
+
+
+\section{Laplace Transform}%
+\subsection{由幂级数引入拉普拉斯变换}%
+\begin{equation*}
+	\sum_{n=1}^{\infty} a_n = A(x)
+\end{equation*}
+
+\begin{equation*}
+	\sum_{n=1}^{\infty} a(n) = A(x)
+\end{equation*}
+If time continues
+\begin{equation*}
+	\int_{0}^{\infty} \red{a(t)} x^t \dd t = \blue{A(x)}  \qc \text{收敛条件：} 0<x<1
+\end{equation*}
+根据恒等式
+\begin{gather*}
+	x = e^{\ln x}\\
+	x^t = e^{t \ln x}
+\end{gather*}
+\(-s = \ln x < 0 \implies s>0\)
+\begin{remark}
+	为什么要令 \(-s = \ln x\)?
+
+	因为 \(\ln x\) 自然地限制了 \(x > 0\)，只要再加一个条件\(\ln x < 0\) 就又限制了 \(x<1\)。
+\end{remark}
+
+\begin{equation*}
+	\int_{0}^{\infty} \red{f(t)} e^{-st} \dd t = \blue{F(s)}  \qc \text{收敛条件：} s > 0
+\end{equation*}
+
+线性性质：
+\begin{itemize}
+	\item 加和：\(\La[f+g] = \La[f]+ \La[g]\)
+	\item 数乘： \(\La[cf] = c \La[f]\)
+\end{itemize}
+
+
+% TODO
+“基”相当于“自变量”，由于基改变了，线性变换称为变换
+
+\begin{itemize}
+	\item \(f(t)\) transform \(F(s)\)
+	\item \(f(t) \) operator \(g(t)\)
+\end{itemize}
+
+\begin{equation*}
+	\La[t^n] = \frac{n}{s} \La[t^{n-1}] = \frac{n!}{s^{n+1}}
+\end{equation*}
+	
+\begin{equation*}
+	\La[f'(t)] = s\La[f(t)] - f(0)
+\end{equation*}
+\begin{equation*}
+	\La[f''(t)] = s\La[f'(t)] - f'(0)
+\end{equation*}
+
+Use Laplace transform to solve linear differential equations with constant coefficients.
+
+Laplace Transform, exist?
+
+Condition: \(f(t)\) doesn't grow so rapidly. ``exponential type''
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

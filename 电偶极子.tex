@@ -1,0 +1,81 @@
+% !TEX root = main.tex
+% 电偶极子
+
+\section{电偶极子}%
+正负点电荷起初都在原点，
+对于正电荷，场点向下移动，
+等效于源点向上移动\(-\Delta \vb{r} = \Delta \vb{r}'\)
+\begin{equation*}
+	\Delta \phi_+=\phi'_+ - \phi_+ =
+	\grad \phi_+ \vdot (-\Delta \vb{r})
+	=\grad \phi_+ \vdot \Delta \vb{r}'
+\end{equation*}
+\begin{equation*}
+	\phi'_+ = \phi_+ +
+	\grad \phi_+ \vdot (-\Delta \vb{r})
+\end{equation*}
+对于负电荷，场点向上移动，等效于源点向下移动
+\(\Delta \vb{r} = - \Delta \vb{r}'\)
+\begin{equation*}
+	\phi'_- =
+	\phi_- + \grad \phi_- \vdot \Delta \vb{r}
+\end{equation*}
+向上移动的正点电荷与向下移动的负点电荷的线性叠加
+\begin{equation*}
+	\phi_+' + \phi_-' = 
+	\grad \phi_+ \vdot 2 \Delta \vb{r}'
+	=
+	\grad \phi_+ \vdot \vb{d}
+	=
+	q \vb{d}  \vdot \grad \frac{1}{r}
+\end{equation*}
+记 \(q\vb{d}\) 为 \(\vb{p}\)，电偶极子的位置就是正负电荷的中间，原点处电偶极子的势函数：
+\begin{equation*}
+	\phi = \phi_+' + \phi_-' = 
+	-\vb{p} \vdot \grad \frac{1}{r}
+\end{equation*}
+若电偶极子不在原点：
+\begin{equation*}
+	\phi =
+	- \vb{p} \vdot \grad \frac{1}{R}
+\end{equation*}
+注意到\(\grad \frac{1}{R} = - \frac{\vu{R}}{R^2}\)
+\begin{equation*}
+	\phi =
+	 \frac{\vb{p} \vdot \vu{R}}{R^2}
+\end{equation*}
+补全系数
+\begin{equation}
+	\phi =
+  \frac{1}{4 \pi \epsilon_0}
+	 \frac{\vb{p} \vdot \vu{R}}{R^2}
+\end{equation}
+电偶极子电场：
+\begin{equation}
+  \vb{E} = \grad \phi= \frac{1}{4 \pi \epsilon_0} \left( \frac{\vb{p}}{R^3} - \frac{3\vb{p \vdot \vb{R}}}{R^5} \vb{R}\right)
+\end{equation}
+磁偶极子磁场
+\begin{equation}
+  \vb{B} = \curl \vb{A}= \frac{\mu_0}{4 \pi} \left( \frac{\vb{m}}{R^3} - \frac{3\vb{m \vdot \vb{R}}}{R^5} \vb{R}\right) 
+\end{equation}
+多个电偶极子势的线性叠加
+\begin{equation*}
+	\begin{aligned}
+	  \sum_i \phi_i(\vb{r}) &=
+	\sum_i {\vb{p}_i \vdot }{\grad \frac{1}{R_i}} \\
+  &=
+	 \int \dd \tau' \vb{P}  \vdot \grad \frac{1}{R} \\
+  &=
+	 \int \dd \tau'\div (  \frac{\vb{P}}{R}) -
+	 \int \dd \tau'\left(\div \vb{P} \right)   \frac{1}{R} \\
+  &=
+	 \oint \dd \vb{S}' \vdot\vb{P} \frac{1}{R} -
+	 \int \dd \tau'\left(\div \vb{P} \right)   \frac{1}{R} \\
+  &=
+	 \oint \dd S'  \frac{\sigma_b}{R} +
+	 \int \dd \tau'  \frac{\rho_b}{R} \\
+	\end{aligned}
+\end{equation*}
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

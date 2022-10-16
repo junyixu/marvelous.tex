@@ -1,0 +1,37 @@
+% !TEX root = main.tex
+% 聪明的积分方法
+
+\begin{gather*}
+	\xi = \alpha x \\
+	\xi \psi_n =\sqrt{\frac{n}{2}} \psi_{n-1} + \sqrt{\frac{n+1}{2}} \psi_{n+1}
+\end{gather*}
+
+\begin{equation*}
+	\int \psi_1^* x^2  \psi_1 =
+\end{equation*}
+
+\begin{align*}
+	\int x^2 e^{-x^2} \dd x
+	 & =
+	\int - \dv{\lambda} e^{-\lambda x^2} \dd x \\
+\marginnote{
+	高斯积分
+\begin{equation*}
+	\red{\int  e^{-x^2} \dd x
+	=
+	\sqrt{\pi}}
+\end{equation*}
+}
+	 & =
+	 - \dv{\lambda}	\red{\int  e^{-\lambda x^2} \dd x} \\
+	 & =
+	 - \dv{\lambda}	\red{\sqrt{\frac{\pi}{\lambda}}} \\
+	 & =
+	 \frac{\sqrt{\pi}\lambda^{-\frac{3}{2}}}{2} \\
+	 & =
+	 \eval{\frac{\sqrt{\pi}\lambda^{-\frac{3}{2}}}{2}}_{\lambda=1} = \frac{\sqrt{\pi}}{2}
+\end{align*}
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

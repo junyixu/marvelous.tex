@@ -1,0 +1,67 @@
+% !TEX root = main.tex
+% 几种三角函数积分技巧
+
+\section{几种三角函数积分技巧}%
+\begin{itemize}
+	\item 万能代换：令\(t=\tan \frac{x}{2}\)
+	\item \( R( -\sin \theta) = - R(\sin \theta) \)，令\(u = \cos \theta\)，凑\(\dd \cos \theta\)
+	\item \( R( -\cos \theta) = - R(\cos \theta) \)，令\(u = \sin \theta\)，凑\(\dd \sin \theta\)
+	\item \( R( -\sin \theta, -\cos \theta) = R(\sin \theta, \cos \theta) \)，令\(u = \tan \theta\)，凑\(\dd \tan \theta\)
+\end{itemize}
+
+\verb+j-j+耦合一般不会考，常考的是 \verb+S-L+耦合
+测试
+
+任何一个长度不变的矢量
+在一个旋转系中的速度都可以写成
+\begin{equation*}
+	\dot{\vb{L}} = \va{\omega} \cross \vb{L}
+\end{equation*}
+\(\dot{\vb{L}}\)依然是个长度不变的矢量，
+它的速度，也就是原先\(\vb{L}\)的加速度可以写成
+\begin{equation*}
+	\ddot{\vb{L}} = \va{\omega} \cross ( \va{\omega} \cross \vb{L})
+\end{equation*}
+根据矢量规则，可以写成：
+\begin{equation*}
+	\begin{aligned}
+		\ddot{\vb{L}} &= bac - cab \\
+									&= \va{\omega} ( \va{\omega} \vdot \vb{L} ) - \omega^2 \vb{L}
+	\end{aligned}
+\end{equation*}
+\begin{equation*}
+	\curl(\lambda \vb{A}) = \lambda \curl \vb{A} + \vb{A} \cross \grad \lambda
+\end{equation*}
+\begin{equation*}
+	\div(\lambda \vb{A}) = \lambda \div \vb{A} + \vb{A} \vdot \grad \lambda
+\end{equation*}
+
+圆锥曲线极坐标
+\begin{equation*}
+	r(\phi) = \frac{p}{1 + e \cos \phi} 
+\end{equation*}
+对于椭圆有\(p = \frac{b^2}{a} \qq{and} e = \frac{c}{a}\)
+
+椭圆的面积\(\pi ab\)
+
+
+
+\begin{equation*}
+	\begin{aligned}
+		S &= \frac{1}{2}\int r^2 \dd \phi \\
+&= \frac{1}{2}\int \left(\frac{p}{1 + e \cos \phi} \right)^2 \dd \phi
+	\end{aligned}
+\end{equation*}
+\begin{tabular}{l}
+\(\cos\phi \to \frac{z + z^{-1}}{2}, z=e^{i \phi} \) \\
+\(\dd \phi \to \frac{\dd z}{i z}\)
+\end{tabular}	
+\begin{equation*}
+	\begin{aligned}
+		S &= \frac{1}{2}\oint_{\abs{z}=1} \left(\frac{p}{1 + e \left(\frac{z + z^{-1}}{2}\right)} \right)^2 \frac{\dd z}{i z}\\
+			&= \frac{1}{2} \oint_{\abs{z}=1} f(z) \frac{1}{i} \dd z \\
+			&= \pi \sum_i \Res(f, b_i)
+	\end{aligned}
+\end{equation*}
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

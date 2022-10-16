@@ -1,0 +1,37 @@
+% !TEX root = main.tex
+% 变质量物体的冲量定理
+
+\section{变质量物体的冲量定理}%
+\begin{equation}
+	F \dd t = m \dv{v}{t} + (v - v') \dv{m}{t}
+\end{equation}
+\(v\)为火箭质量，\(v'\)为燃料质量
+
+忽略引力
+\begin{equation*}
+0 = m \dv{v}{t} + (v - v') \dv{m}{t}
+\end{equation*}
+其中
+\begin{equation*}
+	m = \frac{m_0}{\sqrt{1-\beta^2}}
+\end{equation*}
+伽利略速度变换：
+\begin{equation}
+	v_{\text{绝}} =          v_{\text{相}} +         v_{\text{牵}}
+\end{equation}
+洛仑兹速度变换：
+\begin{equation}
+	v_{\text{绝}} =          
+	\frac{v_{\text{相}} +         v_{\text{牵}}}{1+\frac{v_{\text{相}} v_{\text{牵}}}{c^2}}
+\end{equation}
+在火箭系中，燃料速度为\(-u\)，即，\(v_{\text{相}}=-u\)；
+在地面系中火箭速度为\(v\)
+\begin{equation*}
+	v' = \frac{-u+v}{1 + \frac{-uv}{c^2}}
+\end{equation*}
+
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

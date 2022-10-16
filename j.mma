@@ -1,0 +1,3 @@
+(J = D[#, {{r, \[Theta], \[Phi]}}] & [{r Sin[\[Theta]] Cos[\[Phi]], 
+     r Sin[\[Theta]] Sin[\[Phi]], r Cos[\[Theta]]}]) // MatrixForm
+Transpose[J] . J // Simplify // MatrixForm

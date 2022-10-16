@@ -1,0 +1,67 @@
+%! TEX root = ./main.tex
+% 位移电流
+
+设电荷密度为$\rho(\vb{r}, t)$，电位移矢量为$\vb{D}(\vb{r},t)$
+\begin{definition}[流密度]
+	\begin{equation}
+		\vb{h} := - \pdv{\vb{D}}{t}
+	\end{equation}
+\end{definition}
+体积$V$ 内的自由电荷总量为$Q(t)$(若$V$的范围给定, 只与时间t有关)
+\begin{equation}
+	Q(t)=\iiint_V \rho(\vb{r},t) \dd V
+\end{equation}
+\begin{equation}
+	\div \vb{D} = \rho
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		  & \oiint_S - \vb{h} \vdot \dd \vb{S}                               \\
+		= & \oiint_S \left(\pdv{\vb{D}(\vb{r},t)}{t}\right) \vdot \dd \vb{S} \\ %TODO \vb{D} 语法 粗体 ; % TODO sround.vim 改成 sandwich.vim 
+		= & \iiint_V \div \pdv{\vb{D}(\vb{r},t)}{t} \dd V                    \\
+		= & \dv{t}( \iiint_V \div \vb{D}(\vb{r},t)  \dd V)                   \\
+		= & \dv{Q(t)}{t}
+	\end{aligned}
+\end{equation}
+
+\section{位移电流}%
+安培环路定理:
+\begin{equation}
+	\label{eq:安培环路定理}
+	\oint_l \vb*{H} \vdot \dd \vb{l} = I_0 = \iint_{\mathcal{S}_1} \vb{j_0} \vdot \dd \vb{S}
+\end{equation}
+由于$\mathcal{S}_1$和$\mathcal{S}_2$围住的是同一个回路$l$
+\begin{equation}
+	\label{eq:flux_equal}
+	\iint_{\mathcal{S}_1} \vb{j_0} \vdot \dd \vb{S}= \iint_{\mathcal{S}_2} \vb{j_0} \vdot \dd \vb{S}
+	\implies
+	\iint_{\mathcal{S}_1} \vb{j_0} \vdot \dd \vb{S}- \iint_{\mathcal{S}_2} \vb{j_0} \vdot \dd \vb{S} =0
+\end{equation}
+闭合曲面的通量为：
+\begin{equation}
+	I_{\text{out}} = \oiint_{\text{directed out of } \mathcal{S}} =\iint_{\mathcal{S}_1} + \iint_{-\mathcal{S}_2} = 0
+\end{equation}
+然而，实验告诉我们，对于平行板电容器，如图\ref{fig:displayment-current}所示，传导电流不连续，与Eq~\eqref{eq:flux_equal} 矛盾
+\begin{figure}[ht]
+	\centering
+	\includesvg{displayment-current}
+	\caption{Displacement current.}
+	\label{fig:displayment-current}
+\end{figure}
+
+\begin{remark}
+	思路：找到一个连续的量来满足Eq~\eqref{eq:安培环路定理}的要求，对于任何闭合回路都成立。
+\end{remark}
+
+设闭合曲面的自由电荷量为$Q(t)$，由电荷守恒知，$Q(t)$减少的速率等于流出曲面的电流，自由电荷的连续性方程可写为：
+\begin{equation}
+	\oiint_{S}  \vb{j_0} \vdot \dd \vb{S} = I_{\text{out}} = - \dv{Q(t)}{t} = - \iiint_V \div \pdv{\vb{D}(\vb{r},t)}{t} \dd V
+\end{equation}
+
+\begin{equation}
+	\oiint_S \left( \vb{j_0} + \pdv{\vb{D}}{t} \right) \dd \vectorbold{S} = 0
+\end{equation}
+$\vb{j_0} + \pdv{\vb{D}}{t}$是连续的，把 Eq~\eqref{eq:安培环路定理} 的右边的传导电流密度换掉
+\begin{equation}
+	\oint_l \vb*{H} \vdot \dd \vb{l} = I_0 = \iint_{S_1} \left(\vb{j_0} + \pdv{\vb{D}}{t}\right) \vdot \dd \vb{S}
+\end{equation}

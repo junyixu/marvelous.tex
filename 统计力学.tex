@@ -1,0 +1,25 @@
+%! TEX root = debug.tex
+% 统计力学
+配分函数与热力学量
+\begin{equation}
+  Z(T,V) = \int e^{-\beta \varepsilon} \dd{\omega} 
+  \label{eq:partion_function}
+\end{equation}
+\begin{equation*}
+  U = - N \pdv{\beta} \ln Z
+\end{equation*}
+\begin{equation*}
+  S  = N k T ( \ln Z - \beta \pdv{\beta} \ln Z )
+\end{equation*}
+\begin{equation}
+  F = U -TS = - NkT \ln Z
+  \label{eq:FreeEnergy}
+\end{equation}
+\begin{theorem}[马休定理]
+  给出\(F(T,V)\)就能求出一切热力学量。
+  \label{th:马休定理}
+\end{theorem}
+根据定理\ref{th:马休定理}和Eq.~\eqref{eq:FreeEnergy}和Eq.~\eqref{eq:partion_function}得出：给出\(Z(T,V)\)就能求出一切热力学量
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

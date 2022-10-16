@@ -1,0 +1,82 @@
+\section{热扩散方程}%
+如图~\ref{fig:热流与温度的关系} 可知
+\begin{marginfigure}
+	\includesvg[width=0.8\textwidth]{figures/热流与温度的关系.svg}
+	\caption{热流与温度的关系。不管人为选定的\( x \)轴的方向如何，热量总是自发地从高温热源流向低温热源。}
+	\label{fig:热流与温度的关系}
+\end{marginfigure}
+若\( T_2 - T_1 >0 \)那么热量从红线向蓝线流动\( \vb{h} \)的方向向左
+
+设\( \Delta J \)
+为从1到2传递的热量的大小，显然由于\( T_2>T_1 \)，热量应该由2传到1，所以\( \Delta J \)为负值。
+
+直觉上，\( \Delta J \)
+\begin{itemize}
+	\item 与厚度\( \Delta s  \)成负相关
+	\item 与温差 \( \Delta T \)成正相关
+	\item 与面积 \( \Delta A \)成正相关
+	\item 与材料的性质，即热导率 \( \kappa \)有关
+\end{itemize}
+我们简单粗暴地写成反比和正比的形式(对于大多数金属材料确实近似如此)
+\begin{equation*}
+	\Delta J = \red{-} \kappa \Delta A  \Delta T / \Delta s
+\end{equation*}
+\sn{\red{这里的负号体现着热二定律}}
+设 \( h = \frac{\Delta J}{\Delta A} \)为单位面积的传递的热量，称为热流
+\begin{equation*}
+	h = - \kappa \Delta T / \Delta s
+\end{equation*}
+\begin{equation*}
+	h = - \kappa \frac{\dd T}{\dd s} \qq{或} h_x = - \kappa \dv{T}{x}
+\end{equation*}
+对于三维情况：
+\begin{align*}
+	h_x = - \kappa \pdv{T}{x} \\
+	h_y = - \kappa \pdv{T}{y} \\
+	h_z = - \kappa \pdv{T}{z}
+\end{align*}
+\begin{equation}
+	\vb{h} = - \kappa \grad T
+	\label{eq:热流}
+\end{equation}
+
+选取一小块体积 \( \Delta V \), 设 \( \Delta V \) 中含有热量 \( \Delta Q \), \( \Delta Q \) 的减少率等于流出去的热量(热流\( \vb{h} \)对该表面的环积分)
+\begin{equation}
+	-	\pdv{\Delta Q}{t} = \iint_{\partial (\Delta V)} \vb{h} \vdot \vb{n} \dd A = \div \vb{h} \Delta V
+\end{equation}
+\begin{equation*}
+	-\pdv{t}(\frac{\Delta Q}{\Delta V}) = \div \vb{h}
+\end{equation*}
+设\( q = \frac{\Delta Q}{\Delta V} \) 为单位体积内含有的的热量
+\begin{equation}
+	-\pdv{q}{t} = \div \vb{h}
+	\label{eq:热量连续性}
+\end{equation}
+\begin{equation}
+	q = c_v T
+	\label{eq:热容}
+\end{equation}
+把式~\eqref{eq:热流}和式~\eqref{eq:热容} 带入式~\eqref{eq:热量连续性}
+\begin{equation}
+	\pdv{T}{t} = \frac{\kappa}{c_v} \laplacian T
+	\label{eq:热扩散方程}
+\end{equation}
+式~\eqref{eq:热扩散方程} 常被写为：
+\begin{equation}
+	\pdv{T}{t} =  D \laplacian T
+\end{equation}
+\( D \)称为扩散常数，这里等于\( \frac{\kappa}{c_v} \)。
+
+\begin{itemize}
+	\item Lagrangian 代表着全部的物理
+	      \begin{itemize}
+		      \item 物理系统本身
+		            \begin{enumerate}
+			            \item 物理系统本身
+			            \item 物理规律对系统的支配
+		            \end{enumerate}
+		      \item 物理规律对系统的支配
+	      \end{itemize}
+	\item 三个守恒来自同一个原理：\( \var L = 0 \)
+\end{itemize}
+

@@ -1,0 +1,46 @@
+% !TEX root = main.tex
+% 泰勒展开
+
+乘积顺序不能换，但直积和点积，结合律还是能用的(和点积与叉积不同，因为矢量叉乘得到矢量，矢量点积得到标量)
+\begin{equation*}
+	\int \dd V \div(\vb{j}\vb{x}) 
+	= \oint \dd \vb{S} \vdot (\vb{j}\vb{x}) 
+	= \oint (\dd \vb{S} \vdot \vb{j})\vb{x} 
+\end{equation*}
+\(- \vb{x'}\) 为小量
+\begin{equation*}
+	\begin{aligned}
+	\frac{1}{ \abs{\vb{x} - \vb{x'}} }
+	&= \frac{1}{0!} \frac{1}{\abs{\vb{x}}}
+	+ \frac{1}{1!} (\vb{-x'}) \vdot \grad \frac{1}{\abs{\vb{x}}}
+	+ \frac{1}{2!} (\vb{-x'}) (\vb{-x'}) : \grad\grad \frac{1}{\abs{\vb{x}}} \\
+	&= \frac{1}{0!} \frac{1}{\abs{\vb{x}}}
+	- \frac{1}{1!} \vb{x'} \vdot  \grad \frac{1}{\abs{\vb{x}}}
+	+ \frac{1}{2!} \vb{x'}\vb{x'} : \grad\grad \frac{1}{\abs{\vb{x}}}
+	\end{aligned}
+\end{equation*}
+\begin{equation*}
+	\Delta \phi = \grad \phi \vdot \Delta \vb{x}
+\end{equation*}
+\begin{equation*}
+	 \phi(\vb{x} + \Delta \vb{x}) - \phi(\vb{x})  = \grad \phi \vdot \Delta \vb{x}
+\end{equation*}
+\begin{equation*}
+	 \phi(\vb{x} + \Delta \vb{x}) = \phi(\vb{x})  + \grad \phi \vdot \Delta \vb{x}
+\end{equation*}
+\begin{equation*}
+	 \phi(\vb{x} + \Delta \vb{x}) = \phi(\vb{x})  +  \Delta \vb{x}\vdot \grad \phi
+\end{equation*}
+\begin{equation*}
+	 \phi(\vb{x} + \Delta \vb{x}) = \frac{1}{0!} \phi(\vb{x})  + \frac{1}{1!} \Delta \vb{x}\vdot \grad \phi
+\end{equation*}
+\begin{equation*}
+	 \phi(\vb{x} + \Delta \vb{x}) = \frac{1}{0!} \phi(\vb{x})  +
+	 \frac{1}{1!} \Delta \vb{x}\vdot \grad \phi(\vb{x})
+	 + \frac{1}{2!} \Delta \vb{x} \Delta \vb{x} : \grad \grad \phi(\vb{x}) 
+\end{equation*}
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

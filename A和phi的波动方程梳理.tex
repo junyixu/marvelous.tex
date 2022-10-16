@@ -1,0 +1,48 @@
+% !TEX root = main.tex
+% A和phi的波动方程梳理
+
+\section{A和phi的波动方程梳理}
+
+写出 Maxwell Equations 后
+
+根据两个重要矢量恒等式等于0，通过 Maxwell Equations 的无源部分，定义出矢势和标势
+\begin{equation}
+	\begin{aligned}
+	\vb{B} = \curl \vb{A} \\
+	\vb{E} =  - \grad \phi - \pdv{\vb{A}}{t}
+	\label{eq:def_of_A_and_phi}
+	\end{aligned}
+\end{equation}
+
+把这两个定义代入 Maxwell Equations 的有源部分，利用 Lorentz Gauge，写出两个波动方程
+\begin{equation}
+	\begin{aligned}
+		\da \vb{A} = - \mu_{0}  \vb{j} \\
+	\da \phi = - \frac{\rho}{\epsilon_0}
+	\label{eq:wave_eq_of_A_and_phi}
+	\end{aligned}
+\end{equation}
+通过格林函数法，解方程，引入推迟势的概念
+得到他们的解
+
+真空中有：
+\begin{equation}
+	\begin{aligned}
+		\da \vb{A} = 0 \\
+	\da \phi =0
+	\label{eq:wave_eq_of_A_and_phi_without_source}
+	\end{aligned}
+\end{equation}
+同时对\(\vb{A}\)取旋度后代入Eq.~\eqref{eq:wave_eq_of_A_and_phi_without_source}交换算符的符号，再代入Eq.~\eqref{eq:def_of_A_and_phi} 的第二个式子和Eq.~\eqref{eq:wave_eq_of_A_and_phi_without_source} 的第二个式子，即，把Eq.~\eqref{eq:def_of_A_and_phi} 代入Eq.~\eqref{eq:wave_eq_of_A_and_phi_without_source} 
+可以写出\(\vb{E}\)和\(\vb{B}\)的波动方程
+\begin{equation}
+	\begin{aligned}
+		\Da{\vb{E}} = 0 \\
+		\Da{\vb{B}} = 0
+	\end{aligned}
+\end{equation}
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

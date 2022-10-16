@@ -1,0 +1,75 @@
+% !TEX root = main.tex
+% 加权平均
+
+\section{加权平均}%
+
+一维：\(x\)轴被无限细分成小块，第\(i\)块为\(\Delta x_i\)，这第\(i\)小块内有\(\Delta m_i\)落入其中
+\begin{tabular}{ccc}
+	\(\Delta x_1\) &   对应 & \(\Delta m_1\) \\
+	\(\Delta x_2\) &   对应 & \(\Delta m_2\) \\
+	\(\Delta x_3\) &   对应 & \(\Delta m_3\) \\
+	\(\Delta x_4\) &   对应 & \(\Delta m_4\) \\
+	…… & 对应 & …… \\
+	\(\Delta x_n\) &   对应 & \(\Delta m_n\)
+\end{tabular}
+
+总质量是对所有质量块的求和：
+\begin{equation*}
+	m = \sum_i \Delta  m_i
+\end{equation*}
+质心
+\begin{equation*}
+	x_c =
+	\frac{ \sum_i \Delta x_i \Delta m_i }{\sum_i \Delta m_i}
+\end{equation*}
+定义 \(\rho(x)\) 为线密度
+， 在全空间积分
+\begin{align*}
+	m &= \int \dd m \\
+	x_c  &= \frac{1}{m} \int x \dd m \\
+	&= \frac{1}{m} \int_{-\infty}^{\infty} x \dv{m}{x} \dd x \\
+	&= \frac{1}{m} \int_{-\infty}^{\infty} x \rho(x) \dd x \\
+\end{align*}
+
+
+平均时间
+\begin{equation*}
+	\tau =
+	\frac{ \sum_i \Delta n_i \Delta t_i }{\sum_i \Delta n_i}
+\end{equation*}
+\begin{align*}
+	- \dd n = n \lambda \dd t \\
+	n = n_0 e^{-\lambda t}
+\end{align*}
+\begin{align*}
+	\tau &=
+	\frac{1}{n_0} \int^0_{n_0} t \dd n \\
+			 &=
+	\frac{1}{n_0} \int_0^{n_0} t \red{( - \dd n )} \\
+			 &=
+	\frac{1}{n_0} \int_0^{\infty} t \red{(n \lambda \dd t)} \\
+			 &=
+	\frac{1}{n_0} \int_0^{\infty} t \red{(n_0 e^{-\lambda t} \lambda \dd t)} \\
+\end{align*}
+
+平均能量
+
+有\(a_l\) 个粒子能量为 \(\varepsilon_l\)
+\begin{tabular}{ccc}
+	\( a_1\) &   个粒子能量为 & \( \varepsilon_1\) \\
+	\( a_2\) &   个粒子能量为 & \( \varepsilon_2\) \\
+	\( a_3\) &   个粒子能量为 & \( \varepsilon_3\) \\
+	\( a_4\) &   个粒子能量为 & \( \varepsilon_4\) \\
+	…… & 个粒子能量为& …… \\
+	\( a_n\) &   个粒子能量为 & \( \varepsilon_n\)
+\end{tabular}
+\begin{equation}
+	\label{eq:planck_ave_energy}
+	\overline{\varepsilon} = \frac{\sum_l a_l \varepsilon_l}{\sum_l a_l} = - \pdv{\ln Z}{\beta} = \frac{h \nu}{\exp(\frac{h\nu}{kT}) - 1}
+\end{equation}
+
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

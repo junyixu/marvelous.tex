@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage{fontspec}
+
+\usepackage{minted}
+\usemintedstyle{mathematica}
+
+\begin{document}
+
+% \inputminted{wolfram}{./j.mma}
+\begin{minted}[linenos=true]{wolfram}
+(* An example highlighting the features of
+   this Pygments plugin for Mathematica *)
+lissajous::usage = "An example Lissajous curve.\n" <>
+                   "Definition: f(t) = (sin(3t + Pi/2), sin(t))"
+lissajous = {Sin[2^^11 # + 0.005`10 * 1*^2 * Pi], Sin[#]} &;
+
+ParametricPlot[lissajous[t], {t, 0, 2 Pi}] /. x_Line :> {Dashed, x}
+\end{minted}
+\end{document}
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:
