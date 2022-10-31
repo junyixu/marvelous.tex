@@ -1,8 +1,67 @@
 % debug
 
 \input{preamble}
+\title{等离子体物理基础第三次作业}
+\date{\today}
+\author{核院\ 徐均益\\ SA22214015}
 \begin{document}
-\input{统计力学.tex}
+任意磁场可以由两个标量场\(\alpha,\beta\)表示，\(\alpha,\beta\)和空间、时间都有关\sn{散度为零保证了}
+\begin{equation}
+  \vb{B} = \grad \alpha \cross \grad \beta
+\end{equation}
+磁场可以看作一根根磁力线，磁力线可以看作两个曲面的交线，在数学上如何表述一条曲线? % TODO
+
+冻结方程可以写作
+\begin{equation}
+  \pdv{t}( \grad \alpha \cross \grad \beta ) = \curl( u \cross ( \grad \alpha \cross \grad \beta ) )
+\end{equation}
+也就是
+\begin{equation}
+  \grad(\pdv{\alpha}{t} \cross \grad \beta) + \grad \alpha + \grad(\pdv{\beta}{t}) = 
+  \curl( - \vb{u} \vdot \grad \alpha \grad \beta + \vb{u} \vdot \grad \beta \grad \alpha  )
+\end{equation}
+
+\section{流体漂移}
+
+\section{应力张量}
+\(T_{ij}\)，其中\(i\)表示方向， \(j\)表示作用于哪个面，是\(\Delta y \Delta z\)(法向沿着\(x\)轴)还是\(\Delta z \Delta x\)还是\(\Delta x \Delta y\)；\(\vu{n}\)表示选取的面元的法向，\(T_{ij}n_j\)把\(j\)缩并后，表示的是穿过面元的力的\(i\)分量。
+如果不存在切向力，那么\(T_{ij}\)是一个对角矩阵。
+
+The force \(\vb{F}_1\) across an element of area \(\Delta y \Delta z\) perpendicular to \(x\)-axis 
+is resolved into three components  \( F_{x1}, F_{y1}, F_{z1}\)
+
+\section{相速度乘群速度等于光速平方}
+\begin{tabular}{ll}
+  相速度 & phase velocity  \\
+  群速度 & group velocity
+\end{tabular}
+\begin{equation}
+  v_p v_g = c^2
+\end{equation}
+\begin{proof}
+\begin{equation}
+  v_p = 
+  \frac{\omega}{k} 
+  =
+  \frac{\hbar \omega}{\hbar k} 
+  = \frac{E}{p}
+\end{equation}
+\begin{equation}
+  \begin{aligned}
+    v_g &= 
+  \pdv{\omega}{k} = 
+  \pdv{\hbar \omega}{\hbar k} \\ 
+        &= \pdv{E}{p} = \frac{p}{m} \qq{利用} E^2 = (pc)^2 + (m_0 c^2)^2
+  \end{aligned}
+\end{equation}
+\end{proof}
+
+加热，放电，大电流，电阻，
+等离子体特性，温度越高，电阻越低，几百万度，电阻已经很小了，
+微波加热，中性束加热
+
+
+研究均匀等离子体，密度温度磁场都均匀 
 \end{document}
 
 %%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:
