@@ -1,0 +1,66 @@
+% !TEX root = main.tex
+% Maxwell速度分布律
+
+\section{Maxwell速度分布律}
+旋转不变性
+\begin{equation*}
+	\phi(v_x , v_y , v_z) =
+	f(v_x^2 + v_y^2 + v_z^2) 
+\end{equation*}
+独立性
+\begin{equation*}
+	\phi(v_x , v_y , v_z) = g_x(v_x^2) g_y(v_y^2) g_z(v_z^2)
+\end{equation*}
+各向同性
+\begin{equation}
+  g_x = g_y = g_z = g
+\end{equation}
+结合三种特性可以得出分布函数沿径向指数衰减
+\begin{equation*}
+	\ln{ f(v_x^2 + v_y^2 + v_z^2)} = 
+	\ln{g(v_x^2)}
++
+	\ln g(v_y^2)
+	+
+	\ln g(v_z^2)
+\end{equation*}
+\begin{equation*}
+	\pdv{\ln{ f(v_x^2 + v_y^2 + v_z^2)} }{v^2}
+	= 
+	\pdv{\ln{g(v_x^2)}}{(v_x^2)}
+=
+	\pdv{\ln g(v_y^2)}{(v_y^2)}
+	=
+	\pdv{\ln g(v_z^2)}{(v_z^2)}
+	= - \alpha \qq{where} \alpha > 0 \qquad \footnote{如果 \(\alpha\) 不大于0 会怎样?}
+\end{equation*}
+\begin{equation*}
+	f(v^2) = A e^{- \alpha v^2}
+\end{equation*}
+满足高斯分布
+\begin{equation*}
+	\boxed{
+	g(v_i) = \frac{1}{\sqrt{2 \pi} \sigma} e^{-\frac{(v_i - u)^2}{2 \sigma^2}}
+}
+\end{equation*}
+\begin{equation*}
+	e^{- \frac{\xi^2}{2}}
+\end{equation*}
+\(\xi = (\frac{v}{\sigma})^2\)
+\begin{equation*}
+	e^{- \frac{1}{2}\left(\frac{v - \mean{v}}{ \sigma}\right)^2}  \qq{where} \sigma^2 = \mean{v^2} - \mean{v}^2 
+\end{equation*}
+If \(\mean{v} = 0\)
+\begin{equation*}
+	e^{- \frac{1}{2}\left(\frac{v }{ \sigma}\right)^2}  \qq{where} \sigma^2 = \mean{v^2}
+\end{equation*}
+\(\frac{1}{2} m \mean{v^2} =\mean{E_k} = \frac{i}{2} kT = \frac{1}{2} kT \)
+\begin{equation*}
+	f  (v^2) \propto e^{-\frac{m v^2}{2kT}}
+\end{equation*}
+根据高斯分布(\(\sigma^2 = \frac{kT}{m}\))或利用归一化确定系数
+
+\section{Maxwell速率分布律}
+利用球坐标和\(4 \pi \abs{v}^2\)表示即可
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

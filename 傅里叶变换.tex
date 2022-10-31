@@ -1,0 +1,263 @@
+% 傅里叶变换
+
+\section{傅里叶变换}
+傅里叶级数
+\begin{equation*}
+	f(x) = \frac{a_0}{2} +
+	\sum_{n=1}
+	\left(
+	a_n \cos(n x)  +
+	b_n \sin(n x)
+	\right)
+\end{equation*}
+其中
+\begin{equation*}
+	\begin{aligned}
+		a_n = \frac{1}{\pi} \int_0^{2 \pi}  f(x) \cos{n x} d x \\
+		b_n = \frac{1}{\pi} \int_0^{2 \pi}  f(x) \sin{n x} d x
+	\end{aligned}
+\end{equation*}
+\begin{equation*}
+	f(x) = \frac{a_0}{2} +
+	\sum_{n=1}
+	\left(
+	a_n \cos{\frac{n \pi x}{L}}  +
+	b_n \sin{\frac{n \pi x}{L}}
+	\right)
+\end{equation*}
+其中
+\begin{equation*}
+	\begin{aligned}
+		a_n = \frac{1}{\pi} \int_0^{2 \pi}  f(x) \cos{n x} d x \\
+		b_n = \frac{1}{\pi} \int_0^{2 \pi}  f(x) \sin{n x} d x
+	\end{aligned}
+\end{equation*}
+\begin{equation*}
+	\begin{aligned}
+		a_n = \frac{1}{L} \int_0^{2 L}  f(x) \cos(\frac{n \pi x}{L}) d x \\
+		b_n = \frac{1}{L} \int_0^{2 L}  f(x) \sin(\frac{n \pi x}{L}) d x
+	\end{aligned}
+\end{equation*}
+若\(f(t)\)是周期函数，则有
+\begin{equation*}
+	\int_0^{T}  f(t)  \dd t
+	=
+	\int_{0+x}^{T+x}  f(t)  \dd t
+\end{equation*}
+故
+\begin{equation*}
+	\begin{aligned}
+		a_n = \frac{1}{L} \int_{-L}^{L}  f(x) \cos(\frac{n \pi x}{L}) d x \\
+		b_n = \frac{1}{L} \int_{-L}^{ L}  f(x) \sin(\frac{n \pi x}{L}) d x
+	\end{aligned}
+\end{equation*}
+\begin{equation}
+	\begin{aligned}
+		a_n = \frac{1}{L} \int_{-L}^{L}  f(t) \cos(\frac{n \pi t}{L}) d t \\
+		b_n = \frac{1}{L} \int_{-L}^{ L}  f(t) \sin(\frac{n \pi t}{L}) d t
+		\label{eq:Fourier_coeff}
+	\end{aligned}
+\end{equation}
+当 \(L \to 0\)，若 \(f(x)\) 绝对可积，则
+\begin{equation*}
+	a_0 = \lim_{L \to 0}
+	\left(	\frac{1}{L} \int_{-L}^{L} f(x) \frac{a_0}{2} \dd x \right)= 0
+\end{equation*}
+所以
+\begin{equation*}
+	f(x) =
+	\sum_{n=1}
+	\left(
+	a_n \cos(\frac{n \pi x}{L})  +
+	b_n \sin(\frac{n \pi x}{L})
+	\right)
+\end{equation*}
+将 Eq.~\eqref{eq:Fourier_coeff} 代入
+\begin{equation*}
+	\begin{aligned}
+		f(x) & =
+		\sum_{n=1}
+		\left[
+			\left(
+			\frac{1}{L} \int_{-L}^{L}  f(t) \cos(\frac{n \pi t}{L}) d t
+			\right)
+			\cos(\frac{n \pi x}{L})  +
+			\left(\frac{1}{L} \int_{-L}^{L}  f(t) \sin(\frac{n \pi t}{L}) d t \right)
+			\sin(\frac{n \pi x}{L})
+		\right]  \\
+		     & =
+		\sum_{n=1}
+		\frac{1}{L}\left[
+			\left(
+			\int_{-L}^{L}  f(t) \cos(\frac{n \pi t}{L}) d t
+			\right)
+			\cos(\frac{n \pi x}{L})  +
+			\left( \int_{-L}^{L}  f(t) \sin(\frac{n \pi t}{L}) d t \right)
+			\sin(\frac{n \pi x}{L})
+			\right]
+	\end{aligned}
+\end{equation*}
+令\( \omega_n = \frac{n \pi}{L}, \Delta \omega = \omega_{n+1} - \omega_n = \frac{\pi}{L}\)，当 \(L \to \infty, \Delta \omega \to 0\)
+\begin{equation*}
+	\sum_0^{+\infty} \Delta \omega \ldots
+	=
+	\int_0^{+\infty} \dd \omega \ldots
+\end{equation*}
+\begin{equation*}
+	\begin{aligned}
+		f(x)
+		 & =
+		\sum_{n=1}
+		\frac{\Delta \omega}{\pi}\left[
+			\left(
+			\int_{-L}^{L}  f(t) \cos(\frac{n \pi t}{L}) d t
+			\right)
+			\cos(\frac{n \pi x}{L})  +
+			\left( \int_{-L}^{L}  f(t) \sin(\frac{n \pi t}{L}) d t \right)
+			\sin(\frac{n \pi x}{L})
+		\right]            \\
+		 & =
+		\int_0^{+\infty}
+		\frac{\dd \omega}{\pi}\left[
+			\left(
+			\int_{-\infty}^{+\infty}  f(t) \cos(\omega t) d t
+			\right)
+			\sin(\omega x)  +
+			\left( \int_{-\infty}^{+\infty}  f(t) \sin(\omega t) d t \right)
+			\sin(\omega x)
+		\right]            \\
+		 & =
+		\frac{1}{ \pi}
+		\int_{-\infty}^{+\infty} \dd t
+		\int_{0}^{+\infty} \dd \omega
+		f(t)
+		\left(
+		\cos(\omega t) \cos(\omega x)
+		+
+		\sin(\omega t) \sin(\omega x)
+		\right)            \\
+		 & =
+		\frac{1}{ \pi}
+		\int_{-\infty}^{+\infty} \dd t
+		\int_{0}^{+\infty} \dd \omega
+		f(t)
+		\cos(\omega (x-t)) \\
+		 & =
+		\frac{1}{ 2 \pi}
+		\int_{-\infty}^{+\infty} \dd t
+		\int_{0}^{+\infty} \dd \omega
+		f(t)
+		\left(
+		e^{i \omega (x-t)}
+		+
+		e^{-i \omega (x-t)}
+		\right)            \\
+		 & =
+		\frac{1}{2 \pi}
+		\int_{-\infty}^{+\infty} \dd t
+		\int_{-\infty}^{+\infty} \dd \omega
+		f(t)
+		e^{i \omega (x-t)} \\
+		 & =
+		\frac{1}{2 \pi}
+		\int_{-\infty}^{+\infty} \dd \omega
+		\int_{-\infty}^{+\infty} \dd t
+		f(t)
+		e^{i \omega (x-t)} \\
+		 & =
+		\frac{1}{2 \pi}
+		\int_{-\infty}^{+\infty} \dd \omega
+		e^{i \omega x}
+		\underbrace{
+			\int_{-\infty}^{+\infty} \dd t
+			f(t)
+			e^{-i \omega t}}_{F(\omega)}
+		\\
+	\end{aligned}
+\end{equation*}
+从时域到频域
+\begin{equation*}
+	F(\omega)=\mathcal{F}[f(t)]
+	=
+	\int_{-\infty}^{+\infty}
+	f(t)
+	e^{-i \omega t} \dd t
+\end{equation*}
+从频域到时域
+\begin{equation*}
+	f(t)=\mathcal{F}^{-1}[F(\omega)]
+	=
+	\frac{1}{2 \pi}
+	\int_{-\infty}^{+\infty}
+	F(\omega)
+	e^{i \omega t} \dd \omega
+\end{equation*}
+函数的定义包括什么
+\begin{itemize}
+	\item 法则
+	\item 自变量
+	\item 因变量
+	\item 值域
+\end{itemize}
+\(\mathcal{F}\)是一个算子，把一个函数变为另一个函数。实际上应该有：\(F=\fourier{f}\)，不应该写自变量\(F(\omega)=\fourier{f(t)}\)
+
+\(\omega \to \frac{p}{\hbar}\) \\
+坐标空间到动量空间
+\begin{equation*}
+	C(p)
+	=
+	\frac{1}{\sqrt{2 \pi \hbar}}
+	\int_{-\infty}^{+\infty}
+	\psi(x)
+	e^{- \frac{i}{\hbar} p x}  \dd x
+\end{equation*}
+动量空间到坐标空间
+\begin{equation*}
+	\psi(x)
+	=
+	\frac{1}{\sqrt{2 \pi \hbar}}
+	\int_{-\infty}^{+\infty}
+	C(p)
+	e^{- \frac{i}{\hbar} p x} \dd p
+\end{equation*}
+
+\begin{theorem}[狄利克雷定理]
+	狄利克雷定理是傅里叶级数收敛的充分条件
+	\begin{itemize}
+		\item 周期函数
+		\item 分段光滑
+	\end{itemize}
+\end{theorem}
+
+\subsection{卷积}
+\begin{equation}
+  \begin{aligned}
+     \fourier{f}(s) \fourier{g}(s)
+    &= \int f(t) e^{- 2 \pi ist} \dd{t}\\
+    &=\int g(x) e^{- 2 \pi i sx} \dd{x} \\
+    &= \int \int f(t) g(x) e^{- 2 \pi i s(x+t)} \dd{t} \dd{x} \\
+    &= \int \int f(u-x) g(x) e^{- 2 \pi i s u} \dd{u} \dd{x} \\
+    &= \int \left[\int f(u-x) g(x) \dd{x}\right] e^{- 2 \pi i s u} \dd{u} \\
+    &= \int  \left[f*g\right] e^{- 2 \pi i s u} \dd{u} \\
+    &= \fourier{f*g}(s)
+  \end{aligned}
+\end{equation}
+\begin{remark}
+  \begin{itemize}
+    \item   t: time
+    \item s: spectrum
+    \item x: 坐标
+    \item p: 动量
+  \end{itemize}
+\end{remark}
+
+% TODO
+\begin{remark}
+为什么变换叫变换
+\begin{itemize}
+  \item MIT Laplace 变换课程说：自变量变了，如傅立叶变换 \(t\)变成了\(\omega\)
+  \item \verb|3b1b| 从可视化角度，变换是可操作的，比如线性变换，对空间的操作
+\end{itemize}
+\end{remark}
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:
