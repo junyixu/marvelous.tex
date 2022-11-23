@@ -1,7 +1,83 @@
-% !TEX root = main.tex
 % 勒让德多项式
 
 \section{勒让德多项式}%
+\begin{equation}
+  \laplacian \varphi = 0
+\end{equation}
+由 \cref{eq:广义曲线坐标系拉普拉斯算子} 写出求坐标系的拉普拉斯算子，
+\begin{equation}
+  \laplacian = 
+  \frac{1}{r^2} \pdv{r} r^2 \pdv{r} +
+  \frac{1}{r^2} \pdv{\theta} \sin \theta \pdv{\theta} +
+  \frac{1}{r^2 \sin \theta} \pdv[2]{\phi}
+  \label{eq:球坐标系的拉普拉斯算子}
+\end{equation}
+当函数$\varphi(r, \theta)$与\(\phi\)无关的时候
+\begin{equation}
+  \begin{aligned}
+    \laplacian &= 
+  \frac{1}{r^2} \pdv{r} r^2 \pdv{r} +
+  \frac{1}{r^2 \sin\theta} \pdv{\theta} \sin \theta \pdv{\theta} +
+  \frac{1}{r^2 \sin \theta} \pdv[2]{\phi} \\
+\text{(当函数$\varphi(r, \theta)$与\(\phi\)无关的时候)}
+\quad &=
+  \frac{1}{r^2} \pdv{r} r^2 \pdv{r} +
+  \frac{1}{r^2 \sin\theta} \pdv{\theta} \sin \theta \pdv{\theta}
+  \end{aligned}
+\end{equation}
+\begin{equation}
+  \begin{aligned}
+   & \left(\cancel{\frac{1}{r^2}} \pdv{r} r^2 \pdv{r} +
+  \frac{1}{\cancel{r^2} \sin\theta} \pdv{\theta} \sin \theta \pdv{\theta}\right)
+  \varphi \\
+  &=
+  \left(\pdv{r} r^2 \pdv{r} +
+  \frac{1}{\sin\theta} \pdv{\theta} \sin \theta \pdv{\theta}\right)
+  \varphi = 0
+  \end{aligned}
+\end{equation}
+若 \(\varphi(r, \theta) = R(r) \Theta(\theta)\)
+\begin{equation}
+ \frac{1}{R} \red{\left(\pdv{r} r^2 \pdv{r} \right) }R=
+-\frac{1}{\Theta} \blue{\left(\frac{1}{\sin\theta} \pdv{\theta} \sin \theta \pdv{\theta}\right)} \Theta
+  = \lambda
+\end{equation}
+\begin{align}
+  \red{\left(\dv{r} r^2 \dv{r} \right) } R = \lambda R \label{eq:Legendre_R}\\
+\blue{\left(\frac{1}{\sin\theta} \dv{\theta} \sin \theta \dv{\theta}\right)}\Theta =  - \lambda \Theta \label{eq:Legendre_Q}
+\end{align}
+\cref{eq:Legendre_R} 即
+\begin{equation}
+  \red{\left(\dv{r} r^2 \dv{r} \right) } R = \lambda R 
+\end{equation}
+的 $r> 0$ 而指数函数\(e^t>0, t\in \RR\)，不妨设\(r=e^t\)。
+由于
+链式法则
+\begin{equation}
+  \begin{aligned}
+  &\dv{f}{r}= \dv{t}{r} \dv{f}{t} = \frac{1}{r} \dv{f}{t} \\
+  \implies &\dv{r}=\frac{1}{r} \dv{t}
+  \end{aligned}
+\end{equation}
+得
+\begin{equation}
+  \red{\left(\dv{r} r^2 \dv{r} \right) } R=
+\frac{1}{r} \dv{t} r^2 \frac{1}{r} \dv{t} R
+=
+\frac{1}{r} \dv{t} r\dv{t} R
+= \frac{1}{r} \left( r \ddot{R} + r \dot{R} \right) = \lambda R
+\end{equation}
+\begin{equation}
+\ddot{R} + \dot{R} - \lambda R = 0
+\end{equation}
+目前\footnote{后面可知，只有当\(l\)为整数时，才能截断}\(\lambda \in \RR\)，不妨设\(\lambda = l(l+1), l \in \RR\)，
+解得
+\begin{subequations}
+  \begin{align}
+  &R_1 = C_1 e^{lt} = C_1 r^l \\
+  &R_2 = C_2 e^{(-l-1)t} = C_2 r^{-l-1}
+\end{align}
+\end{subequations}
 \begin{equation*}
 	\begin{aligned}
 		P_l(x) &= \frac{1}{2^l} \sum_{m=0}^{[\frac{l}{2}]}
