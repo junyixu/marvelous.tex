@@ -34,6 +34,7 @@
 			\right]
 		\qc
 		H_i = \frac{\prod_{j \neq i} h_j}{ h_i } =\frac{h'_i}{ h_i }
+    \label{eq:广义曲线坐标系拉普拉斯算子}
 	\end{equation}
 \end{definition}
 
@@ -84,9 +85,9 @@
 	\mqty[ \vu{i} \\ \vu{j} ]
 \end{equation}
 
-\begin{definition}[旋转矩阵\(\RR\)]
+\begin{definition}[旋转矩阵\(\RHat\)]
 	\begin{equation}
-		\RR =
+		\RHat =
 		\mqty[
 			\cos\phi & \sin\phi \\
 			-\sin\phi &\cos\phi \\
@@ -103,7 +104,7 @@
 \begin{equation}
     \label{eq:基矢变换矩阵}
   \begin{aligned}
-    \RR &=
+    \RHat &=
   \mqty[
   \frac{1}{h_1} \pdv{x}{r} &
   \frac{1}{h_1} \pdv{y}{r} &
@@ -308,7 +309,7 @@
 		\pdv{u}{r}    & \pdv{u}{\phi}
 		              & \pdv{u}{\theta}
 		]
-		\red{\JJ^{-1} \RR \tp
+		\red{\JJ^{-1} \RHat \tp
 		}\mqty[
 		\vu{r}                                          \\
 		\vu{\phi}                                       \\
@@ -334,7 +335,7 @@
 \marginnote{我猜想红色的式子是普遍相等的}
 
 \begin{equation*}
-	\JJ^{-1} \RR \tp
+	\JJ^{-1} \RHat \tp
 	=
 	\mqty[
 		\frac{1}{h_1} &0&0 \\
@@ -344,9 +345,9 @@
 \end{equation*}
 
 \begin{equation*}
-	(\JJ^{-1} \RR \tp)^{-1}
+	(\JJ^{-1} \RHat \tp)^{-1}
 	=
-	\RR \JJ
+	\RHat \JJ
 	=
 	\mqty[
 		h_1 &0&0 \\
@@ -357,7 +358,7 @@
 将式~\eqref{eq:基矢变换矩阵} 带入：
 \begin{equation*}
   \begin{aligned}
-    \RR \JJ &= 
+    \RHat \JJ &= 
         \mqty[
   \frac{1}{h_1}  &
   0  &
@@ -416,7 +417,7 @@
 % \inputminted[linenos,numbersep=5pt,frame=lines,framesep=2mm]{wolfram}{./j.mma}
 \code{wolfram}{./j.mma}
 用 Mathematica 验证发现对于极坐标，柱坐标，球坐标，雅可比矩阵都满足式~\eqref{eq:拉梅系数平方} 。
-% \(\RR \JJ =\text{\mintinline{matlab}{diag([h1,h2,h3])}}\)
+% \(\RHat \JJ =\text{\mintinline{matlab}{diag([h1,h2,h3])}}\)
 \includegraphics[width=0.5\textwidth]{figures/2021-10-13T133210+0800.png} 
 
 
