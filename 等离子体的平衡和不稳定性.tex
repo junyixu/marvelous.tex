@@ -1,0 +1,52 @@
+% 等离子体的平衡和不稳定性
+\section{2022-12-03}
+\begin{itemize}[\textcolor{red}{?}]
+  \item 为什么等离子体是良导体，所以就没有束缚电荷？
+  \item 为什么等离子体是良导体，运流电流 \( \ll \) 传导电流?
+\end{itemize}
+
+\section{等离子体的平衡和不稳定性}
+列出牛顿第二定律
+\begin{equation}
+  \rho \left( \pdv{\vb{u}}{t} + \vb{u} \vdot \grad \vb{u} \right) = - \grad p + \frac{1}{c} \vb{j} \cross \vb{B}.
+  \label{eq:Newtons_2nd_law}
+\end{equation}
+由于流体系统由无数流体元组成，是一个无穷维系统，所以解方程组时候需要在某处截断。
+流体元受力平衡则\cref{eq:Newtons_2nd_law} 的等号左边为0:
+\begin{equation}
+  \grad p = \frac{1}{c} \vb{j} \cross \vb{B}
+  = \frac{1}{4 \pi} ( \curl \vb{B} ) \cross \vb{B}
+\end{equation}
+根据矢量恒等式，
+\begin{equation}
+  \grad(\vb{B} \vdot \vb{B}) = 2\vb{B} \cross ( \curl \vb{B} ) + 2\vb{B} \vdot \grad \vb{B}
+\end{equation}
+上式可写成
+\begin{equation}
+  \grad(p + \frac{B^2}{8 \pi}) = \frac{\vb{B} \vdot \grad \vb{B}}{4 \pi} 
+\end{equation}
+
+
+\section{磁场的曲面坐标}
+选取坐标\((\psi, \chi, \zeta)\)满足
+\begin{gather}
+  \grad \psi \vdot \grad \zeta = 0 \\
+  \laplacian \zeta = 0
+\end{gather}
+把磁感应强度写成
+\begin{equation}
+  \vb{B} = F(\psi) \grad \zeta + \grad \psi \cross \grad \zeta
+\end{equation}
+自然有
+\begin{equation}
+  \div \vb{B} = 0
+\end{equation}
+并且此时
+\subsection{平板位形}
+\begin{equation}
+  \curl \vb{B} = \dv{F}{\psi} \vu{z} \cross \grad \psi + \vu{z} \laplacian \psi
+\end{equation}
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:
