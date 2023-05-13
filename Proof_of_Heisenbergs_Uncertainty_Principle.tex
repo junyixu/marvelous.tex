@@ -1,0 +1,44 @@
+% Proof_of_Heisenbergs_Uncertainty_Principle
+
+\section{Proof of Heisenberg's Uncertainty Principle}
+
+Introducing a real coefficient \(\xi\) and an operator \(\hat{F}\), where
+\begin{equation}
+  -\infty < \xi < \infty
+\end{equation}
+and
+\begin{equation}
+  \hat{F} = \xi \hat{A} + i \hat{B} \quad  \hat{F} = \xi \hat{A} - i \hat{B},
+\end{equation}
+so that
+\begin{equation}
+  \begin{aligned}
+    \hat{F}^\dagger  \hat{F} &= \xi^2 \hat{A}^2 + \hat{B}^2 + i \xi (\hat{A} \hat{B} - \hat{B} \hat{A}) \\
+                             &= \xi^2 \hat{A} + \hat{B}^2 - \xi \hat{C}.
+  \end{aligned}
+\end{equation}
+Let
+\begin{equation}
+  I(\xi) = \Braket{ \hat{F}^\dagger \hat{F} }  = \int \psi^* \hat{F}^\dagger \hat{F} \dd{\tau} = \xi^2 \bar{A}^2 + \bar{B}^2 - \xi \bar{C} \geq 0,
+\end{equation}
+where
+\begin{equation}
+  \int \psi^* \hat{F}^\dagger \hat{F} \dd{\tau} = \int \hat{F} \psi ( F \psi )^* \dd{\tau}.
+\end{equation}
+\begin{equation}
+  \implies \bar{A}^2 \bar{B}^2 \geq  \frac{\bar{C}^2}{4}
+\end{equation}
+\begin{align}
+  \hat{A} \rightarrow \hat{A} - \bar{A} \\
+  \hat{B} \rightarrow \hat{B} - \bar{B}
+\end{align}
+\begin{equation}
+  \implies \Delta A \cdot \Delta B \geq \frac{\abs{\bar{C}}}{2}
+\end{equation}
+\begin{equation}
+  \Delta x \Delta p_x \geq \frac{\hbar}{2}
+\end{equation}
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:

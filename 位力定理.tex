@@ -1,0 +1,35 @@
+% 位力定理
+
+\section{位力定理}
+
+位力定理\footnote{见朗道力学第二章第10节}：
+若势能\(U \propto r^k\)，则有
+\begin{equation}
+  \Braket{kU} \equiv \Braket{\vb{r} \vdot \pdv{U}{\vb{r}}} =
+  \Braket{ \vb{v} \vdot \pdv{T}{\vb{v}}} \equiv  \Braket{2T}
+\end{equation}
+中间的等号是因为牛二。多粒子系统要写\(\Sigma_\alpha\)。
+\begin{proof} (由牛二证明)
+  \begin{equation}
+    \vb{F} = m \vb{a}
+  \end{equation}
+  两边同时乘以 \(\vb{r}\)
+  \begin{equation}
+    \begin{aligned}
+      \vb{r} \vdot \left( - \pdv{U}{\vb{r}} \right) &= m \dv{\vb{v}}{t} \vdot \vb{r} \\
+                                                    &=
+m \dv{t}(\vb{v} \vdot \vb{r})
+- m \vb{v} \vdot \vb{v}
+    \end{aligned}
+  \end{equation}
+    两边同时在一个周期内对时间做平均，由于$ m \dv{t}(\vb{v} \vdot \vb{r})$ 是一个全微分，初态和末态在相空间的值$(\vb{r}, \vb{v})$是一样的，故只剩下
+  \begin{equation}
+    \Braket{\vb{r} \vdot \pdv{U}{\vb{r}} } =
+\Braket{m \vb{v} \vdot \vb{v}}
+  \end{equation}
+\end{proof}
+
+
+
+
+%%% vim: set ts=2 sts=2 sw=2 isk+=\: et cc=+1 formatoptions+=mM:
